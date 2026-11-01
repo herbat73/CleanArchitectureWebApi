@@ -55,6 +55,34 @@ dotnet run --project .\src\Web
 
 The application expects PostgreSQL on `127.0.0.1:5432`, configured in `src\Web\appsettings.json`. The API reference is served at `/scalar`.
 
+## Client app (Angular)
+
+The Angular client lives in `src/ClientApp` and calls the WebApi through `/api`. In development, `ng serve` forwards `/api` to the WebApi (`proxy.conf.json`), so no CORS setup is needed for the client.
+
+Both services must run:
+
+1. WebApi on `http://localhost:5117` (Terminal 1):
+   ```bash
+   dotnet run --project .\src\Web --launch-profile http
+   ```
+2. Angular client on `http://localhost:4200` (Terminal 2):
+   ```bash
+   cd src\ClientApp
+   npm install
+   npm start
+   ```
+
+Open `http://localhost:4200` and sign in. The development database is seeded with `administrator@localhost` / `Administrator1!`. The client stores the bearer tokens in `localStorage` and refreshes them on a 401.
+
+The WebApi can also be called directly, for example from the Scalar reference at `http://localhost:5117/scalar` or from `Web.http`.
+
+Client build and tests:
+```bash
+cd src\ClientApp
+npm run build
+npm test -- --watch=false
+```
+
 ## Test
 
 The solution contains unit, integration, and functional tests.

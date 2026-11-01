@@ -1,0 +1,66 @@
+<section class="toolbar">
+  <form class="new-list" (ngSubmit)="createList()">
+    <input name="listTitle" placeholder="New list title" maxlength="200" [(ngModel)]="newListTitle" />
+    <select name="listColour" [(ngModel)]="newListColour" aria-label="List colour">
+      @for (colour of vm()?.colours ?? []; track colour.code) {
+        <option [value]="colour.code">{{ colour.name }}</option>
+      }
+    </select>
+    <button type="submit" [disabled]="!newListTitle.trim()">Add list</button>
+  </form>
+  <button class="ghost" type="button" (click)="signOut()">Sign out</button>
+</section>
+
+@if (error(); as message) {
+  <p class="error" role="alert">{{ message }}</p>
+}
+
+@if (vm(); as data) {
+  @if (data.lists.length === 0) {
+    <p class="muted">No lists yet. Create one above.</p>
+  }
+
+  <div class="lists">
+    @for (list of data.lists; track list.id) {
+      <article class="list" [style.border-top-color]="list.colour ?? 'transparent'">
+        <header>
+          <h2>{{ list.title }}</h2>
+          <button class="ghost danger" type="button" (click)="deleteList(list)" aria-label="Delete list">Delete</button>
+        </header>
+
+        <ul>
+          @for (item of list.items; track item.id) {
+            <li [class.done]="item.done">
+              <label class="item-title">
+                <input type="checkbox" [checked]="item.done" (change)="toggleDone(item)" />
+                <span>{{ item.title }}</span>
+              </label>
+
+              <select
+                class="priority"
+                aria-label="Priority"
+                [ngModel]="item.priority"
+                (ngModelChange)="setPriority(item, $event)"
+                [ngModelOptions]="{ standalone: true }">
+                @for (level of data.priorityLevels; track level.id) {
+                  <option [ngValue]="level.id">{{ level.title }}</option>
+                }
+              </select>
+
+              <button class="ghost danger" type="button" (click)="deleteItem(item)" aria-label="Delete item">✕</button>
+            </li>
+          } @empty {
+            <li class="muted">No items.</li>
+          }
+        </ul>
+
+        <form class="add-item" (ngSubmit)="addItem(list)">
+          <input name="draft-{{ list.id }}" placeholder="Add an item" maxlength="200" [(ngModel)]="drafts[list.id]" />
+          <button type="submit" [disabled]="!drafts[list.id]?.trim()">Add</button>
+        </form>
+      </article>
+    }
+  </div>
+} @else if (!error()) {
+  <p class="muted">Loading…</p>
+}
