@@ -25,13 +25,13 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Restore
-        run: dotnet restore CleanArchietureNoFrontEnd.slnx
+        run: dotnet restore CleanArchitectureWebApi.slnx
 
       - name: Build
-        run: dotnet build CleanArchietureNoFrontEnd.slnx --configuration Release --no-restore
+        run: dotnet build CleanArchitectureWebApi.slnx --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test CleanArchietureNoFrontEnd.slnx --configuration Release --no-restore --no-build --logger trx --logger GitHubActions --results-directory ./test-results/ -p:CI=true
+        run: dotnet test CleanArchitectureWebApi.slnx --configuration Release --no-restore --no-build --logger trx --logger GitHubActions --results-directory ./test-results/ -p:CI=true
 
       - name: .NET Test Results
         uses: dorny/test-reporter@v2
@@ -43,4 +43,4 @@ jobs:
           reporter: dotnet-trx
 
       - name: Publish
-        run: dotnet publish CleanArchietureNoFrontEnd.slnx --configuration Release --no-restore --no-build
+        run: dotnet publish CleanArchitectureWebApi.slnx --configuration Release --no-restore --no-build
