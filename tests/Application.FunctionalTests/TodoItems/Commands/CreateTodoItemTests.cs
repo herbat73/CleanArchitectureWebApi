@@ -5,9 +5,10 @@ using CleanArchietureNoFrontEnd.Domain.Entities;
 
 namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.TodoItems.Commands;
 
+[Collection("Functional")]
 public class CreateTodoItemTests : TestBase
 {
-    [Test]
+    [Fact]
     public async Task ShouldRequireMinimumFields()
     {
         var command = new CreateTodoItemCommand();
@@ -15,7 +16,7 @@ public class CreateTodoItemTests : TestBase
         await Should.ThrowAsync<ValidationException>(() => TestApp.SendAsync(command));
     }
 
-    [Test]
+    [Fact]
     public async Task ShouldCreateTodoItem()
     {
         var userId = await TestApp.RunAsDefaultUserAsync();

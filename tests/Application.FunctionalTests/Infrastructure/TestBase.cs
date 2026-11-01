@@ -1,10 +1,13 @@
 namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.Infrastructure;
 
-public abstract class TestBase
+// xUnit creates a new instance of the test class for every test, so InitializeAsync runs before each test
+// (xUnit's equivalent of a per-test setup method).
+public abstract class TestBase : IAsyncLifetime
 {
-    [SetUp]
-    public async Task SetUp()
+    public async Task InitializeAsync()
     {
         await TestApp.ResetState();
     }
+
+    public Task DisposeAsync() => Task.CompletedTask;
 }

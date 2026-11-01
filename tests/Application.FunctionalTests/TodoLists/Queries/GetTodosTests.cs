@@ -4,9 +4,10 @@ using CleanArchietureNoFrontEnd.Domain.ValueObjects;
 
 namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.TodoLists.Queries;
 
+[Collection("Functional")]
 public class GetTodosTests : TestBase
 {
-    [Test]
+    [Fact]
     public async Task ShouldReturnPriorityLevels()
     {
         await TestApp.RunAsDefaultUserAsync();
@@ -18,7 +19,7 @@ public class GetTodosTests : TestBase
         result.PriorityLevels.ShouldNotBeEmpty();
     }
 
-    [Test]
+    [Fact]
     public async Task ShouldReturnAllListsAndItems()
     {
         await TestApp.RunAsDefaultUserAsync();
@@ -47,7 +48,7 @@ public class GetTodosTests : TestBase
         result.Lists.First().Items.Count.ShouldBe(7);
     }
 
-    [Test]
+    [Fact]
     public async Task ShouldDenyAnonymousUser()
     {
         var query = new GetTodosQuery();

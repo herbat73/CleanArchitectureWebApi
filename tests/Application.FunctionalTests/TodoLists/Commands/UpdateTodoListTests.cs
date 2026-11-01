@@ -5,16 +5,17 @@ using CleanArchietureNoFrontEnd.Domain.Entities;
 
 namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.TodoLists.Commands;
 
+[Collection("Functional")]
 public class UpdateTodoListTests : TestBase
 {
-    [Test]
+    [Fact]
     public async Task ShouldRequireValidTodoListId()
     {
         var command = new UpdateTodoListCommand { Id = 99, Title = "New Title" };
         await Should.ThrowAsync<NotFoundException>(() => TestApp.SendAsync(command));
     }
 
-    [Test]
+    [Fact]
     public async Task ShouldRequireUniqueTitle()
     {
         var listId = await TestApp.SendAsync<int>(new CreateTodoListCommand
@@ -39,7 +40,7 @@ public class UpdateTodoListTests : TestBase
         ex.Errors["Title"].ShouldContain("'Title' must be unique.");
     }
 
-    [Test]
+    [Fact]
     public async Task ShouldUpdateTodoList()
     {
         var userId = await TestApp.RunAsDefaultUserAsync();

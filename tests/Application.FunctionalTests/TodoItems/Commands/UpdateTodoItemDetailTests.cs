@@ -7,9 +7,10 @@ using CleanArchietureNoFrontEnd.Domain.Enums;
 
 namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.TodoItems.Commands;
 
+[Collection("Functional")]
 public class UpdateTodoItemDetailTests : TestBase
 {
-    [Test]
+    [Fact]
     public async Task ShouldRequireValidTodoItemId()
     {
         var command = new UpdateTodoItemCommand { Id = 99, Title = "New Title" };
@@ -17,7 +18,7 @@ public class UpdateTodoItemDetailTests : TestBase
         await Should.ThrowAsync<NotFoundException>(() => TestApp.SendAsync(command));
     }
 
-    [Test]
+    [Fact]
     public async Task ShouldUpdateTodoItem()
     {
         var userId = await TestApp.RunAsDefaultUserAsync();

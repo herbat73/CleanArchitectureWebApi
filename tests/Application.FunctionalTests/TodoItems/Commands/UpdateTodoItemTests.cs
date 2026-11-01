@@ -5,16 +5,17 @@ using CleanArchietureNoFrontEnd.Domain.Entities;
 
 namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.TodoItems.Commands;
 
+[Collection("Functional")]
 public class UpdateTodoItemTests : TestBase
 {
-    [Test]
+    [Fact]
     public async Task ShouldRequireValidTodoItemId()
     {
         var command = new UpdateTodoItemCommand { Id = 99, Title = "New Title" };
         await Should.ThrowAsync<NotFoundException>(() => TestApp.SendAsync(command));
     }
 
-    [Test]
+    [Fact]
     public async Task ShouldUpdateTodoItem()
     {
         var userId = await TestApp.RunAsDefaultUserAsync();

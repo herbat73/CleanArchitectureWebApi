@@ -2,5 +2,5 @@
 global using CleanArchietureNoFrontEnd.Application.FunctionalTests.Infrastructure;
 global using CleanArchietureNoFrontEnd.Shared;
 global using Moq;
-global using NUnit.Framework;
+global using Xunit;
 global using Shouldly;

@@ -4,16 +4,17 @@ using CleanArchietureNoFrontEnd.Domain.Entities;
 
 namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.TodoLists.Commands;
 
+[Collection("Functional")]
 public class CreateTodoListTests : TestBase
 {
-    [Test]
+    [Fact]
     public async Task ShouldRequireMinimumFields()
     {
         var command = new CreateTodoListCommand();
         await Should.ThrowAsync<ValidationException>(() => TestApp.SendAsync(command));
     }
 
-    [Test]
+    [Fact]
     public async Task ShouldRequireUniqueTitle()
     {
         await TestApp.SendAsync(new CreateTodoListCommand
@@ -29,7 +30,7 @@ public class CreateTodoListTests : TestBase
         await Should.ThrowAsync<ValidationException>(() => TestApp.SendAsync(command));
     }
 
-    [Test]
+    [Fact]
     public async Task ShouldCreateTodoList()
     {
         var userId = await TestApp.RunAsDefaultUserAsync();

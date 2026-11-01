@@ -5,9 +5,10 @@ using CleanArchietureNoFrontEnd.Domain.Entities;
 
 namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.TodoItems.Commands;
 
+[Collection("Functional")]
 public class DeleteTodoItemTests : TestBase
 {
-    [Test]
+    [Fact]
     public async Task ShouldRequireValidTodoItemId()
     {
         var command = new DeleteTodoItemCommand(99);
@@ -15,7 +16,7 @@ public class DeleteTodoItemTests : TestBase
         await Should.ThrowAsync<NotFoundException>(() => TestApp.SendAsync(command));
     }
 
-    [Test]
+    [Fact]
     public async Task ShouldDeleteTodoItem()
     {
         var listId = await TestApp.SendAsync<int>(new CreateTodoListCommand
