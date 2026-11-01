@@ -1,4 +1,4 @@
-﻿# CleanArchieture WenApi No FrontEnd
+﻿# Clean Architecture WenApi No FrontEnd
 
 Clean Architecture starter for .NET 10
 
