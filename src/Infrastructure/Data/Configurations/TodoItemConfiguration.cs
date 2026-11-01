@@ -1,8 +1,8 @@
-﻿using CleanArchietureNoFrontEnd.Domain.Entities;
+﻿using CleanArchitectureWebApi.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CleanArchietureNoFrontEnd.Infrastructure.Data.Configurations;
+namespace CleanArchitectureWebApi.Infrastructure.Data.Configurations;
 
 public class TodoItemConfiguration : IEntityTypeConfiguration<TodoItem>
 {

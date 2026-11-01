@@ -1,9 +1,9 @@
-using CleanArchietureNoFrontEnd.Domain.Exceptions;
-using CleanArchietureNoFrontEnd.Domain.ValueObjects;
+using CleanArchitectureWebApi.Domain.Exceptions;
+using CleanArchitectureWebApi.Domain.ValueObjects;
 using Shouldly;
 using Xunit;
 
-namespace CleanArchietureNoFrontEnd.Domain.UnitTests.ValueObjects;
+namespace CleanArchitectureWebApi.Domain.UnitTests.ValueObjects;
 
 public class ColourTests
 {

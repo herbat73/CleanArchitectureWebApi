@@ -1,4 +1,4 @@
-﻿namespace CleanArchietureNoFrontEnd.Application.Common.Security;
+﻿namespace CleanArchitectureWebApi.Application.Common.Security;
 
 /// <summary>
 /// Specifies the class this attribute is applied to requires authorization.

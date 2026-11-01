@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>CleanArchietureNoFrontEnd.Shared</RootNamespace>
-    <AssemblyName>CleanArchietureNoFrontEnd.Shared</AssemblyName>
+    <RootNamespace>CleanArchitectureWebApi.Shared</RootNamespace>
+    <AssemblyName>CleanArchitectureWebApi.Shared</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup>

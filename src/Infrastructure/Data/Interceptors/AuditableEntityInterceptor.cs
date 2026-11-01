@@ -1,10 +1,10 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
-using CleanArchietureNoFrontEnd.Domain.Common;
+﻿using CleanArchitectureWebApi.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
-namespace CleanArchietureNoFrontEnd.Infrastructure.Data.Interceptors;
+namespace CleanArchitectureWebApi.Infrastructure.Data.Interceptors;
 
 public class AuditableEntityInterceptor : SaveChangesInterceptor
 {

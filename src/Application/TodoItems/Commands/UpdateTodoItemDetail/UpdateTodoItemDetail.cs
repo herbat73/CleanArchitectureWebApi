@@ -1,7 +1,7 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
-using CleanArchietureNoFrontEnd.Domain.Enums;
+﻿using CleanArchitectureWebApi.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Domain.Enums;
 
-namespace CleanArchietureNoFrontEnd.Application.TodoItems.Commands.UpdateTodoItemDetail;
+namespace CleanArchitectureWebApi.Application.TodoItems.Commands.UpdateTodoItemDetail;
 
 public record UpdateTodoItemDetailCommand
 {

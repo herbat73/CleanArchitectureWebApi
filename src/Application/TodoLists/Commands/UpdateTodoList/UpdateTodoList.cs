@@ -1,7 +1,7 @@
-using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
-using CleanArchietureNoFrontEnd.Domain.ValueObjects;
+using CleanArchitectureWebApi.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Domain.ValueObjects;
 
-namespace CleanArchietureNoFrontEnd.Application.TodoLists.Commands.UpdateTodoList;
+namespace CleanArchitectureWebApi.Application.TodoLists.Commands.UpdateTodoList;
 
 public record UpdateTodoListCommand
 {

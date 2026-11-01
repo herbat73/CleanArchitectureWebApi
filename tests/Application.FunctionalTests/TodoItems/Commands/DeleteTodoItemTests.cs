@@ -1,9 +1,9 @@
-﻿using CleanArchietureNoFrontEnd.Application.TodoItems.Commands.CreateTodoItem;
-using CleanArchietureNoFrontEnd.Application.TodoItems.Commands.DeleteTodoItem;
-using CleanArchietureNoFrontEnd.Application.TodoLists.Commands.CreateTodoList;
-using CleanArchietureNoFrontEnd.Domain.Entities;
+﻿using CleanArchitectureWebApi.Application.TodoItems.Commands.CreateTodoItem;
+using CleanArchitectureWebApi.Application.TodoItems.Commands.DeleteTodoItem;
+using CleanArchitectureWebApi.Application.TodoLists.Commands.CreateTodoList;
+using CleanArchitectureWebApi.Domain.Entities;
 
-namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.TodoItems.Commands;
+namespace CleanArchitectureWebApi.Application.FunctionalTests.TodoItems.Commands;
 
 [Collection("Functional")]
 public class DeleteTodoItemTests : TestBase

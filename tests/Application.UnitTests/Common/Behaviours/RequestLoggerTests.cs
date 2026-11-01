@@ -1,12 +1,12 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
-using CleanArchietureNoFrontEnd.Application.Common.Middleware;
-using CleanArchietureNoFrontEnd.Application.TodoItems.Commands.CreateTodoItem;
+﻿using CleanArchitectureWebApi.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Application.Common.Middleware;
+using CleanArchitectureWebApi.Application.TodoItems.Commands.CreateTodoItem;
 using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Wolverine;
 using Xunit;
 
-namespace CleanArchietureNoFrontEnd.Application.UnitTests.Common.Behaviours;
+namespace CleanArchitectureWebApi.Application.UnitTests.Common.Behaviours;
 
 public class RequestLoggerTests
 {

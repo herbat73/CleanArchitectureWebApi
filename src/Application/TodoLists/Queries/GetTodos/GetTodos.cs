@@ -1,10 +1,10 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
-using CleanArchietureNoFrontEnd.Application.Common.Models;
-using CleanArchietureNoFrontEnd.Application.Common.Security;
-using CleanArchietureNoFrontEnd.Domain.Enums;
-using CleanArchietureNoFrontEnd.Domain.ValueObjects;
+﻿using CleanArchitectureWebApi.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Application.Common.Models;
+using CleanArchitectureWebApi.Application.Common.Security;
+using CleanArchitectureWebApi.Domain.Enums;
+using CleanArchitectureWebApi.Domain.ValueObjects;
 
-namespace CleanArchietureNoFrontEnd.Application.TodoLists.Queries.GetTodos;
+namespace CleanArchitectureWebApi.Application.TodoLists.Queries.GetTodos;
 
 [Authorize]
 public record GetTodosQuery;

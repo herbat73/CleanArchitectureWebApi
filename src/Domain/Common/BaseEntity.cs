@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CleanArchietureNoFrontEnd.Domain.Common;
+namespace CleanArchitectureWebApi.Domain.Common;
 
 public abstract class BaseEntity
 {

@@ -1,9 +1,9 @@
 using System.Diagnostics;
-using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Application.Common.Interfaces;
 using Microsoft.Extensions.Logging;
 using Wolverine;
 
-namespace CleanArchietureNoFrontEnd.Application.Common.Middleware;
+namespace CleanArchitectureWebApi.Application.Common.Middleware;
 
 public class PerformanceMiddleware
 {
@@ -33,7 +33,7 @@ public class PerformanceMiddleware
                 userName = await identityService.GetUserNameAsync(userId);
             }
 
-            logger.LogWarning("CleanArchietureNoFrontEnd Long Running Request: {Name} ({ElapsedMilliseconds} milliseconds) {@UserId} {@UserName} {@Request}",
+            logger.LogWarning("CleanArchitectureWebApi Long Running Request: {Name} ({ElapsedMilliseconds} milliseconds) {@UserId} {@UserName} {@Request}",
                 requestName, elapsedMilliseconds, userId, userName, message);
         }
     }

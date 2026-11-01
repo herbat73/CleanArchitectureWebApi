@@ -1,6 +1,6 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
+﻿using CleanArchitectureWebApi.Application.Common.Interfaces;
 
-namespace CleanArchietureNoFrontEnd.Application.TodoLists.Commands.CreateTodoList;
+namespace CleanArchitectureWebApi.Application.TodoLists.Commands.CreateTodoList;
 
 public class CreateTodoListCommandValidator : AbstractValidator<CreateTodoListCommand>
 {

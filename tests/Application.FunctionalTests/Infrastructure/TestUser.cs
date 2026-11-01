@@ -1,6 +1,6 @@
-using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Application.Common.Interfaces;
 
-namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.Infrastructure;
+namespace CleanArchitectureWebApi.Application.FunctionalTests.Infrastructure;
 
 /// <summary>
 /// Concrete IUser for the test host. Wolverine generates typed handler/middleware code and cannot

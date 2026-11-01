@@ -1,7 +1,7 @@
-﻿using CleanArchietureNoFrontEnd.Domain.Events;
+﻿using CleanArchitectureWebApi.Domain.Events;
 using Microsoft.Extensions.Logging;
 
-namespace CleanArchietureNoFrontEnd.Application.TodoItems.EventHandlers;
+namespace CleanArchitectureWebApi.Application.TodoItems.EventHandlers;
 
 public class LogTodoItemCompletedHandler
 {
@@ -14,7 +14,7 @@ public class LogTodoItemCompletedHandler
 
     public Task Handle(TodoItemCompletedEvent notification, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("CleanArchietureNoFrontEnd Domain Event: {DomainEvent}", notification.GetType().Name);
+        _logger.LogInformation("CleanArchitectureWebApi Domain Event: {DomainEvent}", notification.GetType().Name);
 
         return Task.CompletedTask;
     }

@@ -1,9 +1,9 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Exceptions;
+﻿using CleanArchitectureWebApi.Application.Common.Exceptions;
 using FluentValidation.Results;
 using Shouldly;
 using Xunit;
 
-namespace CleanArchietureNoFrontEnd.Application.UnitTests.Common.Exceptions;
+namespace CleanArchitectureWebApi.Application.UnitTests.Common.Exceptions;
 
 public class ValidationExceptionTests
 {

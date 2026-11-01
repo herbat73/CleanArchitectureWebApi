@@ -1,6 +1,6 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
+﻿using CleanArchitectureWebApi.Application.Common.Interfaces;
 
-namespace CleanArchietureNoFrontEnd.Application.TodoLists.Commands.DeleteTodoList;
+namespace CleanArchitectureWebApi.Application.TodoLists.Commands.DeleteTodoList;
 
 public record DeleteTodoListCommand(int Id);
 

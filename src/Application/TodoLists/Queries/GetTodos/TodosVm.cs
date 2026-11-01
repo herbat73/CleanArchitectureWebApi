@@ -1,6 +1,6 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Models;
+﻿using CleanArchitectureWebApi.Application.Common.Models;
 
-namespace CleanArchietureNoFrontEnd.Application.TodoLists.Queries.GetTodos;
+namespace CleanArchitectureWebApi.Application.TodoLists.Queries.GetTodos;
 
 public class TodosVm
 {

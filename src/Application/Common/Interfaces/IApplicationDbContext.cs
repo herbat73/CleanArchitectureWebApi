@@ -1,6 +1,6 @@
-﻿using CleanArchietureNoFrontEnd.Domain.Entities;
+﻿using CleanArchitectureWebApi.Domain.Entities;
 
-namespace CleanArchietureNoFrontEnd.Application.Common.Interfaces;
+namespace CleanArchitectureWebApi.Application.Common.Interfaces;
 
 public interface IApplicationDbContext
 {

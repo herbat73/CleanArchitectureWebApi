@@ -1,4 +1,4 @@
-using CleanArchietureNoFrontEnd.Infrastructure.Data;
+using CleanArchitectureWebApi.Infrastructure.Data;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);

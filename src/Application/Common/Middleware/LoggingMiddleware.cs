@@ -1,8 +1,8 @@
-using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Application.Common.Interfaces;
 using Microsoft.Extensions.Logging;
 using Wolverine;
 
-namespace CleanArchietureNoFrontEnd.Application.Common.Middleware;
+namespace CleanArchitectureWebApi.Application.Common.Middleware;
 
 public class LoggingMiddleware
 {
@@ -23,7 +23,7 @@ public class LoggingMiddleware
             userName = await identityService.GetUserNameAsync(userId);
         }
 
-        logger.LogInformation("CleanArchietureNoFrontEnd Request: {Name} {@UserId} {@UserName} {@Request}",
+        logger.LogInformation("CleanArchitectureWebApi Request: {Name} {@UserId} {@UserName} {@Request}",
             requestName, userId, userName, message);
     }
 }

@@ -1,7 +1,7 @@
 using Azure.Identity;
-using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
-using CleanArchietureNoFrontEnd.Infrastructure.Data;
-using CleanArchietureNoFrontEnd.Web.Services;
+using CleanArchitectureWebApi.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Infrastructure.Data;
+using CleanArchitectureWebApi.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Microsoft.Extensions.DependencyInjection;

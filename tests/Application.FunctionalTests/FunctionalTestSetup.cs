@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Testcontainers.PostgreSql;
 
-namespace CleanArchietureNoFrontEnd.Application.FunctionalTests;
+namespace CleanArchitectureWebApi.Application.FunctionalTests;
 
 // xUnit has no assembly-level setup fixture, so the shared container, host and database are created by a collection fixture.
 // Every functional test class joins the "Functional" collection, which runs them sequentially against one database.

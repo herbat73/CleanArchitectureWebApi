@@ -1,12 +1,12 @@
-using CleanArchietureNoFrontEnd.Domain.Constants;
-using CleanArchietureNoFrontEnd.Infrastructure.Data;
-using CleanArchietureNoFrontEnd.Infrastructure.Identity;
+using CleanArchitectureWebApi.Domain.Constants;
+using CleanArchitectureWebApi.Infrastructure.Data;
+using CleanArchitectureWebApi.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Wolverine;
 
-namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.Infrastructure;
+namespace CleanArchitectureWebApi.Application.FunctionalTests.Infrastructure;
 
 public static class TestApp
 {

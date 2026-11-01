@@ -1,8 +1,8 @@
-using ValidationException = CleanArchietureNoFrontEnd.Application.Common.Exceptions.ValidationException;
+using ValidationException = CleanArchitectureWebApi.Application.Common.Exceptions.ValidationException;
 using FluentValidation.Results;
 using Wolverine.FluentValidation;
 
-namespace CleanArchietureNoFrontEnd.Application.Common.Validation;
+namespace CleanArchitectureWebApi.Application.Common.Validation;
 
 /// <summary>
 /// Replaces the default Wolverine.FluentValidation failure action (which throws FluentValidation's own

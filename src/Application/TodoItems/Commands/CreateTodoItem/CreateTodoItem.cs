@@ -1,7 +1,7 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
-using CleanArchietureNoFrontEnd.Domain.Entities;
+﻿using CleanArchitectureWebApi.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Domain.Entities;
 
-namespace CleanArchietureNoFrontEnd.Application.TodoItems.Commands.CreateTodoItem;
+namespace CleanArchitectureWebApi.Application.TodoItems.Commands.CreateTodoItem;
 
 public record CreateTodoItemCommand
 {

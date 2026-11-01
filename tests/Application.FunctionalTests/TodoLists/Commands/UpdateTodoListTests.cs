@@ -1,9 +1,9 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Exceptions;
-using CleanArchietureNoFrontEnd.Application.TodoLists.Commands.CreateTodoList;
-using CleanArchietureNoFrontEnd.Application.TodoLists.Commands.UpdateTodoList;
-using CleanArchietureNoFrontEnd.Domain.Entities;
+﻿using CleanArchitectureWebApi.Application.Common.Exceptions;
+using CleanArchitectureWebApi.Application.TodoLists.Commands.CreateTodoList;
+using CleanArchitectureWebApi.Application.TodoLists.Commands.UpdateTodoList;
+using CleanArchitectureWebApi.Domain.Entities;
 
-namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.TodoLists.Commands;
+namespace CleanArchitectureWebApi.Application.FunctionalTests.TodoLists.Commands;
 
 [Collection("Functional")]
 public class UpdateTodoListTests : TestBase

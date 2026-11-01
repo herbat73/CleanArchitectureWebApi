@@ -1,6 +1,6 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
+﻿using CleanArchitectureWebApi.Application.Common.Interfaces;
 
-namespace CleanArchietureNoFrontEnd.Application.TodoItems.Commands.DeleteTodoItem;
+namespace CleanArchitectureWebApi.Application.TodoItems.Commands.DeleteTodoItem;
 
 public record DeleteTodoItemCommand(int Id);
 

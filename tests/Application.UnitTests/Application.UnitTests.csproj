@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <RootNamespace>CleanArchietureNoFrontEnd.Application.UnitTests</RootNamespace>
-        <AssemblyName>CleanArchietureNoFrontEnd.Application.UnitTests</AssemblyName>
+        <RootNamespace>CleanArchitectureWebApi.Application.UnitTests</RootNamespace>
+        <AssemblyName>CleanArchitectureWebApi.Application.UnitTests</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>

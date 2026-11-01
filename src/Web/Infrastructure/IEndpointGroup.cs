@@ -1,4 +1,4 @@
-namespace CleanArchietureNoFrontEnd.Web.Infrastructure;
+namespace CleanArchitectureWebApi.Web.Infrastructure;
 
 /// <summary>
 /// Defines a group of related Minimal API endpoints.

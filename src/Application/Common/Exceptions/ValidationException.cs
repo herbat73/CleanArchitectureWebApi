@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
 
-namespace CleanArchietureNoFrontEnd.Application.Common.Exceptions;
+namespace CleanArchitectureWebApi.Application.Common.Exceptions;
 
 public class ValidationException : Exception
 {

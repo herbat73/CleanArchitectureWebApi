@@ -1,11 +1,11 @@
-using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Application.Common.Interfaces;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.Infrastructure;
+namespace CleanArchitectureWebApi.Application.FunctionalTests.Infrastructure;
 
 public class WebApiFactory(string connectionString) : WebApplicationFactory<Program>
 {

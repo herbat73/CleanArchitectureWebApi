@@ -1,7 +1,7 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
-using CleanArchietureNoFrontEnd.Infrastructure.Data;
-using CleanArchietureNoFrontEnd.Infrastructure.Data.Interceptors;
-using CleanArchietureNoFrontEnd.Infrastructure.Identity;
+﻿using CleanArchitectureWebApi.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Infrastructure.Data;
+using CleanArchitectureWebApi.Infrastructure.Data.Interceptors;
+using CleanArchitectureWebApi.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;

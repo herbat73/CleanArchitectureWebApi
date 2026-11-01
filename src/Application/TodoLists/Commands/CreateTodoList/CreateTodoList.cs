@@ -1,8 +1,8 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
-using CleanArchietureNoFrontEnd.Domain.Entities;
-using CleanArchietureNoFrontEnd.Domain.ValueObjects;
+﻿using CleanArchitectureWebApi.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Domain.Entities;
+using CleanArchitectureWebApi.Domain.ValueObjects;
 
-namespace CleanArchietureNoFrontEnd.Application.TodoLists.Commands.CreateTodoList;
+namespace CleanArchitectureWebApi.Application.TodoLists.Commands.CreateTodoList;
 
 public record CreateTodoListCommand
 {

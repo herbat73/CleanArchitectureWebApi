@@ -1,4 +1,4 @@
-﻿namespace CleanArchietureNoFrontEnd.Application.Common.Exceptions;
+﻿namespace CleanArchitectureWebApi.Application.Common.Exceptions;
 
 public class ForbiddenAccessException : Exception
 {

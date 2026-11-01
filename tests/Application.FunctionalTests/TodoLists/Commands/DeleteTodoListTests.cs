@@ -1,8 +1,8 @@
-﻿using CleanArchietureNoFrontEnd.Application.TodoLists.Commands.CreateTodoList;
-using CleanArchietureNoFrontEnd.Application.TodoLists.Commands.DeleteTodoList;
-using CleanArchietureNoFrontEnd.Domain.Entities;
+﻿using CleanArchitectureWebApi.Application.TodoLists.Commands.CreateTodoList;
+using CleanArchitectureWebApi.Application.TodoLists.Commands.DeleteTodoList;
+using CleanArchitectureWebApi.Domain.Entities;
 
-namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.TodoLists.Commands;
+namespace CleanArchitectureWebApi.Application.FunctionalTests.TodoLists.Commands;
 
 [Collection("Functional")]
 public class DeleteTodoListTests : TestBase

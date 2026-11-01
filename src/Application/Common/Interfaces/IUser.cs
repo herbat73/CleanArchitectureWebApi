@@ -1,4 +1,4 @@
-﻿namespace CleanArchietureNoFrontEnd.Application.Common.Interfaces;
+﻿namespace CleanArchitectureWebApi.Application.Common.Interfaces;
 
 public interface IUser
 {

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.OpenApi;
 using Microsoft.OpenApi;
 
-namespace CleanArchietureNoFrontEnd.Web.Infrastructure;
+namespace CleanArchitectureWebApi.Web.Infrastructure;
 
 /// <summary>
 /// Adds human-readable summaries and descriptions to the ASP.NET Core Identity endpoints

@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.OpenApi;
 using Microsoft.OpenApi;
 
-namespace CleanArchietureNoFrontEnd.Web.Infrastructure;
+namespace CleanArchitectureWebApi.Web.Infrastructure;
 
 /// <summary>
 /// Marks every operation that requires authorization with the <c>Bearer</c> security requirement,

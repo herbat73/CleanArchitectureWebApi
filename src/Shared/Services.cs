@@ -1,4 +1,4 @@
-﻿namespace CleanArchietureNoFrontEnd.Shared;
+﻿namespace CleanArchitectureWebApi.Shared;
 
 public static class Services
 {

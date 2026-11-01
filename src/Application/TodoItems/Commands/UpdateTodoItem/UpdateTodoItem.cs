@@ -1,6 +1,6 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
+﻿using CleanArchitectureWebApi.Application.Common.Interfaces;
 
-namespace CleanArchietureNoFrontEnd.Application.TodoItems.Commands.UpdateTodoItem;
+namespace CleanArchitectureWebApi.Application.TodoItems.Commands.UpdateTodoItem;
 
 public record UpdateTodoItemCommand
 {

@@ -2,7 +2,7 @@ using Npgsql;
 using Respawn;
 using System.Data.Common;
 
-namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.Infrastructure;
+namespace CleanArchitectureWebApi.Application.FunctionalTests.Infrastructure;
 
 internal sealed class DatabaseResetter : IAsyncDisposable
 {

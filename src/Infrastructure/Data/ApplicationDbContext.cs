@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
-using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
-using CleanArchietureNoFrontEnd.Domain.Entities;
-using CleanArchietureNoFrontEnd.Infrastructure.Identity;
+using CleanArchitectureWebApi.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Domain.Entities;
+using CleanArchitectureWebApi.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchietureNoFrontEnd.Infrastructure.Data;
+namespace CleanArchitectureWebApi.Infrastructure.Data;
 
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
 {

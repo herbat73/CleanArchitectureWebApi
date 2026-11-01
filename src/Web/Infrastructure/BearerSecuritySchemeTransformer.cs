@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.OpenApi;
 using Microsoft.OpenApi;
 
-namespace CleanArchietureNoFrontEnd.Web.Infrastructure;
+namespace CleanArchitectureWebApi.Web.Infrastructure;
 
 /// <summary>
 /// Declares the <c>Bearer</c> HTTP security scheme in the OpenAPI document so the Scalar UI can

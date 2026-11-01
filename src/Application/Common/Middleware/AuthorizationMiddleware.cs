@@ -1,10 +1,10 @@
 using System.Reflection;
-using CleanArchietureNoFrontEnd.Application.Common.Exceptions;
-using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
-using CleanArchietureNoFrontEnd.Application.Common.Security;
+using CleanArchitectureWebApi.Application.Common.Exceptions;
+using CleanArchitectureWebApi.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Application.Common.Security;
 using Wolverine;
 
-namespace CleanArchietureNoFrontEnd.Application.Common.Middleware;
+namespace CleanArchitectureWebApi.Application.Common.Middleware;
 
 public class AuthorizationMiddleware
 {

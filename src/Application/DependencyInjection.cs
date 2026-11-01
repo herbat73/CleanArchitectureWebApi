@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
-using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
-using CleanArchietureNoFrontEnd.Application.Common.Middleware;
-using CleanArchietureNoFrontEnd.Application.Common.Validation;
+using CleanArchitectureWebApi.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Application.Common.Middleware;
+using CleanArchitectureWebApi.Application.Common.Validation;
 using Microsoft.Extensions.Hosting;
 using Wolverine;
 using Wolverine.FluentValidation;
@@ -29,7 +29,7 @@ public static class DependencyInjection
 
             // Only apply the application pipeline to application requests, not domain events.
             static bool IsApplicationRequest(HandlerChain chain) =>
-                chain.MessageType.Namespace?.StartsWith("CleanArchietureNoFrontEnd.Application", StringComparison.Ordinal) == true;
+                chain.MessageType.Namespace?.StartsWith("CleanArchitectureWebApi.Application", StringComparison.Ordinal) == true;
 
             opts.Policies.AddMiddleware<LoggingMiddleware>(IsApplicationRequest);
             opts.Policies.AddMiddleware<AuthorizationMiddleware>(IsApplicationRequest);

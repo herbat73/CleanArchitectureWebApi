@@ -1,9 +1,9 @@
-﻿using CleanArchietureNoFrontEnd.Domain.Common;
+﻿using CleanArchitectureWebApi.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Wolverine;
 
-namespace CleanArchietureNoFrontEnd.Infrastructure.Data.Interceptors;
+namespace CleanArchitectureWebApi.Infrastructure.Data.Interceptors;
 
 public class DispatchDomainEventsInterceptor : SaveChangesInterceptor
 {

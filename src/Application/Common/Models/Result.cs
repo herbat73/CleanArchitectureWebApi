@@ -1,4 +1,4 @@
-﻿namespace CleanArchietureNoFrontEnd.Application.Common.Models;
+﻿namespace CleanArchitectureWebApi.Application.Common.Models;
 
 public class Result
 {

@@ -1,4 +1,4 @@
-namespace CleanArchietureNoFrontEnd.Domain.ValueObjects;
+namespace CleanArchitectureWebApi.Domain.ValueObjects;
 
 public class Colour(string code) : ValueObject
 {

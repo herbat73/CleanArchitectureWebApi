@@ -1,6 +1,6 @@
-﻿using CleanArchietureNoFrontEnd.Application.Common.Models;
+﻿using CleanArchitectureWebApi.Application.Common.Models;
 
-namespace CleanArchietureNoFrontEnd.Application.Common.Interfaces;
+namespace CleanArchitectureWebApi.Application.Common.Interfaces;
 
 public interface IIdentityService
 {

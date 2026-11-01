@@ -1,10 +1,10 @@
-using CleanArchietureNoFrontEnd.Application.TodoLists.Commands.CreateTodoList;
-using CleanArchietureNoFrontEnd.Application.TodoLists.Commands.DeleteTodoList;
-using CleanArchietureNoFrontEnd.Application.TodoLists.Commands.UpdateTodoList;
-using CleanArchietureNoFrontEnd.Application.TodoLists.Queries.GetTodos;
+using CleanArchitectureWebApi.Application.TodoLists.Commands.CreateTodoList;
+using CleanArchitectureWebApi.Application.TodoLists.Commands.DeleteTodoList;
+using CleanArchitectureWebApi.Application.TodoLists.Commands.UpdateTodoList;
+using CleanArchitectureWebApi.Application.TodoLists.Queries.GetTodos;
 using Microsoft.AspNetCore.Http.HttpResults;
 
-namespace CleanArchietureNoFrontEnd.Web.Endpoints;
+namespace CleanArchitectureWebApi.Web.Endpoints;
 
 public class TodoLists : IEndpointGroup
 {

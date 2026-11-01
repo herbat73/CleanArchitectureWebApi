@@ -1,4 +1,4 @@
-﻿namespace CleanArchietureNoFrontEnd.Domain.Constants;
+﻿namespace CleanArchitectureWebApi.Domain.Constants;
 
 public abstract class Roles
 {

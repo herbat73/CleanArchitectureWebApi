@@ -1,7 +1,7 @@
-﻿using CleanArchietureNoFrontEnd.Domain.Constants;
-using CleanArchietureNoFrontEnd.Domain.Entities;
-using CleanArchietureNoFrontEnd.Domain.ValueObjects;
-using CleanArchietureNoFrontEnd.Infrastructure.Identity;
+﻿using CleanArchitectureWebApi.Domain.Constants;
+using CleanArchitectureWebApi.Domain.Entities;
+using CleanArchitectureWebApi.Domain.ValueObjects;
+using CleanArchitectureWebApi.Infrastructure.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Npgsql;
 
-namespace CleanArchietureNoFrontEnd.Infrastructure.Data;
+namespace CleanArchitectureWebApi.Infrastructure.Data;
 
 public static class InitialiserExtensions
 {

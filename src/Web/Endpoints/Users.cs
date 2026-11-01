@@ -1,9 +1,9 @@
-﻿using CleanArchietureNoFrontEnd.Infrastructure.Identity;
+﻿using CleanArchitectureWebApi.Infrastructure.Identity;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CleanArchietureNoFrontEnd.Web.Endpoints;
+namespace CleanArchitectureWebApi.Web.Endpoints;
 
 public class Users : IEndpointGroup
 {

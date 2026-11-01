@@ -1,8 +1,8 @@
-﻿using CleanArchietureNoFrontEnd.Application.TodoLists.Queries.GetTodos;
-using CleanArchietureNoFrontEnd.Domain.Entities;
-using CleanArchietureNoFrontEnd.Domain.ValueObjects;
+﻿using CleanArchitectureWebApi.Application.TodoLists.Queries.GetTodos;
+using CleanArchitectureWebApi.Domain.Entities;
+using CleanArchitectureWebApi.Domain.ValueObjects;
 
-namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.TodoLists.Queries;
+namespace CleanArchitectureWebApi.Application.FunctionalTests.TodoLists.Queries;
 
 [Collection("Functional")]
 public class GetTodosTests : TestBase

@@ -1,10 +1,10 @@
-using CleanArchietureNoFrontEnd.Application.Common.Interfaces;
-using CleanArchietureNoFrontEnd.Application.Common.Models;
+using CleanArchitectureWebApi.Application.Common.Interfaces;
+using CleanArchitectureWebApi.Application.Common.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchietureNoFrontEnd.Infrastructure.Identity;
+namespace CleanArchitectureWebApi.Infrastructure.Identity;
 
 public class IdentityService : IIdentityService
 {
