@@ -1,4 +1,4 @@
-﻿# Clean Architecture WenApi No FrontEnd
+﻿# Clean Architecture WebApi, No FrontEnd
 
 Clean Architecture starter for .NET 10
 It is simplified and modified version based on concept taken from [Clean.Architecture.Solution.Template](https://github.com/jasontaylordev/CleanArchitecture) 
