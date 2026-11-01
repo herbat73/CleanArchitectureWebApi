@@ -1,4 +1,6 @@
-﻿# Clean Architecture WebApi, No FrontEnd
+﻿[![Build](https://github.com/herbat73/CleanArchitectureWebApi/actions/workflows/build_and_test.yml/badge.svg)](https://github.com/herbat73/CleanArchitectureWebApi/actions/workflows/build_and_test.yml)
+
+# Clean Architecture WebApi, No FrontEnd
 
 Clean Architecture starter for .NET 10
 It is simplified and modified version based on concept taken from [Clean.Architecture.Solution.Template](https://github.com/jasontaylordev/CleanArchitecture) 
@@ -8,6 +10,7 @@ Differences:
 - No AutoMapper (refactored code)
 - No Aspire stack
 - No NUnit (XUnit used)
+- Functional tests are using TestContainers in order to run on GitHub test actions
 - Fixes & refactoring
 
 ## What's included in the template?
