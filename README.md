@@ -66,14 +66,14 @@ Both services must run:
    ```bash
    dotnet run --project .\src\Web --launch-profile http
    ```
-2. Angular client on `http://localhost:4200` (Terminal 2):
+2. Angular client on `http://localhost:3000` (Terminal 2):
    ```bash
    cd src\ClientApp
    npm install
    npm start
    ```
 
-Open `http://localhost:4200` and sign in. The development database is seeded with `administrator@localhost` / `Administrator1!`. The client stores the bearer tokens in `localStorage` and refreshes them on a 401.
+Open `http://localhost:3000` and sign in. The development database is seeded with `administrator@localhost` / `Administrator1!`. The client stores the bearer tokens in `localStorage` and refreshes them on a 401.
 
 The WebApi can also be called directly, for example from the Scalar reference at `http://localhost:5117/scalar` or from `Web.http`.
 
