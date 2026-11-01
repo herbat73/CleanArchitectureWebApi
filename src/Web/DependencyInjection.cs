@@ -28,6 +28,7 @@ public static class DependencyInjection
         {
             options.AddOperationTransformer<ApiExceptionOperationTransformer>();
             options.AddOperationTransformer<IdentityApiOperationTransformer>();
+            options.AddOperationTransformer<BearerSecurityRequirementTransformer>();
             options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
         });
 
