@@ -3,7 +3,7 @@ using CleanArchietureNoFrontEnd.Domain.ValueObjects;
 
 namespace CleanArchietureNoFrontEnd.Application.TodoLists.Commands.UpdateTodoList;
 
-public record UpdateTodoListCommand : IRequest
+public record UpdateTodoListCommand
 {
     public int Id { get; init; }
 
@@ -12,7 +12,7 @@ public record UpdateTodoListCommand : IRequest
     public string? Colour { get; init; }
 }
 
-public class UpdateTodoListCommandHandler : IRequestHandler<UpdateTodoListCommand>
+public class UpdateTodoListCommandHandler
 {
     private readonly IApplicationDbContext _context;
 

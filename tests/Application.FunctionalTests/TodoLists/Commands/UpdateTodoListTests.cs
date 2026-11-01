@@ -17,7 +17,7 @@ public class UpdateTodoListTests : TestBase
     [Test]
     public async Task ShouldRequireUniqueTitle()
     {
-        var listId = await TestApp.SendAsync(new CreateTodoListCommand
+        var listId = await TestApp.SendAsync<int>(new CreateTodoListCommand
         {
             Title = "New List"
         });
@@ -44,7 +44,7 @@ public class UpdateTodoListTests : TestBase
     {
         var userId = await TestApp.RunAsDefaultUserAsync();
 
-        var listId = await TestApp.SendAsync(new CreateTodoListCommand
+        var listId = await TestApp.SendAsync<int>(new CreateTodoListCommand
         {
             Title = "New List"
         });

@@ -1,8 +1,8 @@
 ﻿namespace CleanArchietureNoFrontEnd.Application.WeatherForecasts.Queries.GetWeatherForecasts;
 
-public record GetWeatherForecastsQuery : IRequest<IEnumerable<WeatherForecast>>;
+public record GetWeatherForecastsQuery;
 
-public class GetWeatherForecastsQueryHandler : IRequestHandler<GetWeatherForecastsQuery, IEnumerable<WeatherForecast>>
+public class GetWeatherForecastsQueryHandler
 {
     private static readonly string[] Summaries = new[]
     {

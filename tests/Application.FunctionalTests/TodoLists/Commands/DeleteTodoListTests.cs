@@ -16,7 +16,7 @@ public class DeleteTodoListTests : TestBase
     [Test]
     public async Task ShouldDeleteTodoList()
     {
-        var listId = await TestApp.SendAsync(new CreateTodoListCommand
+        var listId = await TestApp.SendAsync<int>(new CreateTodoListCommand
         {
             Title = "New List"
         });

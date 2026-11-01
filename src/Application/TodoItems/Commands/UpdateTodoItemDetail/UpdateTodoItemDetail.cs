@@ -3,7 +3,7 @@ using CleanArchietureNoFrontEnd.Domain.Enums;
 
 namespace CleanArchietureNoFrontEnd.Application.TodoItems.Commands.UpdateTodoItemDetail;
 
-public record UpdateTodoItemDetailCommand : IRequest
+public record UpdateTodoItemDetailCommand
 {
     public int Id { get; init; }
 
@@ -14,7 +14,7 @@ public record UpdateTodoItemDetailCommand : IRequest
     public string? Note { get; init; }
 }
 
-public class UpdateTodoItemDetailCommandHandler : IRequestHandler<UpdateTodoItemDetailCommand>
+public class UpdateTodoItemDetailCommandHandler
 {
     private readonly IApplicationDbContext _context;
 

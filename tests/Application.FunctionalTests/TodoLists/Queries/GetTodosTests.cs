@@ -13,7 +13,7 @@ public class GetTodosTests : TestBase
 
         var query = new GetTodosQuery();
 
-        var result = await TestApp.SendAsync(query);
+        var result = await TestApp.SendAsync<TodosVm>(query);
 
         result.PriorityLevels.ShouldNotBeEmpty();
     }
@@ -41,7 +41,7 @@ public class GetTodosTests : TestBase
 
         var query = new GetTodosQuery();
 
-        var result = await TestApp.SendAsync(query);
+        var result = await TestApp.SendAsync<TodosVm>(query);
 
         result.Lists.Count.ShouldBe(1);
         result.Lists.First().Items.Count.ShouldBe(7);

@@ -3,11 +3,11 @@ using Microsoft.Extensions.Logging;
 
 namespace CleanArchietureNoFrontEnd.Application.TodoItems.EventHandlers;
 
-public class LogTodoItemCompleted : INotificationHandler<TodoItemCompletedEvent>
+public class LogTodoItemCompletedHandler
 {
-    private readonly ILogger<LogTodoItemCompleted> _logger;
+    private readonly ILogger<LogTodoItemCompletedHandler> _logger;
 
-    public LogTodoItemCompleted(ILogger<LogTodoItemCompleted> logger)
+    public LogTodoItemCompletedHandler(ILogger<LogTodoItemCompletedHandler> logger)
     {
         _logger = logger;
     }

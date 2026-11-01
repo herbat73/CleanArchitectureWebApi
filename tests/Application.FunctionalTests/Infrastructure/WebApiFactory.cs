@@ -18,13 +18,7 @@ public class WebApiFactory(string connectionString) : WebApplicationFactory<Prog
         {
             services
                 .RemoveAll<IUser>()
-                .AddTransient(provider =>
-                {
-                    var mock = new Mock<IUser>();
-                    mock.SetupGet(x => x.Roles).Returns(TestApp.GetRoles());
-                    mock.SetupGet(x => x.Id).Returns(TestApp.GetUserId());
-                    return mock.Object;
-                });
+                .AddScoped<IUser, TestUser>();
         });
     }
 }

@@ -1,10 +1,10 @@
 using CleanArchietureNoFrontEnd.Domain.Constants;
 using CleanArchietureNoFrontEnd.Infrastructure.Data;
 using CleanArchietureNoFrontEnd.Infrastructure.Identity;
-using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Wolverine;
 
 namespace CleanArchietureNoFrontEnd.Application.FunctionalTests.Infrastructure;
 
@@ -13,22 +13,22 @@ public static class TestApp
     private static string? _userId;
     private static List<string>? _roles;
 
-    public static async Task<TResponse> SendAsync<TResponse>(IRequest<TResponse> request)
+    public static async Task<TResponse> SendAsync<TResponse>(object request)
     {
         using var scope = FunctionalTestSetup.ScopeFactory.CreateScope();
 
-        var mediator = scope.ServiceProvider.GetRequiredService<ISender>();
+        var bus = scope.ServiceProvider.GetRequiredService<IMessageBus>();
 
-        return await mediator.Send(request);
+        return await bus.InvokeAsync<TResponse>(request);
     }
 
-    public static async Task SendAsync(IBaseRequest request)
+    public static async Task SendAsync(object request)
     {
         using var scope = FunctionalTestSetup.ScopeFactory.CreateScope();
 
-        var mediator = scope.ServiceProvider.GetRequiredService<ISender>();
+        var bus = scope.ServiceProvider.GetRequiredService<IMessageBus>();
 
-        await mediator.Send(request);
+        await bus.InvokeAsync(request);
     }
 
     public static string? GetUserId() => _userId;

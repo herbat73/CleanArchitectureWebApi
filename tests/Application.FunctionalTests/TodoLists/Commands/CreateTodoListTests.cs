@@ -39,7 +39,7 @@ public class CreateTodoListTests : TestBase
             Title = "Tasks"
         };
 
-        var id = await TestApp.SendAsync(command);
+        var id = await TestApp.SendAsync<int>(command);
 
         var list = await TestApp.FindAsync<TodoList>(id);
 

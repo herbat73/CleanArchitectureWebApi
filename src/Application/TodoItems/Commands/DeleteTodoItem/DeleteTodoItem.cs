@@ -2,9 +2,9 @@
 
 namespace CleanArchietureNoFrontEnd.Application.TodoItems.Commands.DeleteTodoItem;
 
-public record DeleteTodoItemCommand(int Id) : IRequest;
+public record DeleteTodoItemCommand(int Id);
 
-public class DeleteTodoItemCommandHandler : IRequestHandler<DeleteTodoItemCommand>
+public class DeleteTodoItemCommandHandler
 {
     private readonly IApplicationDbContext _context;
 

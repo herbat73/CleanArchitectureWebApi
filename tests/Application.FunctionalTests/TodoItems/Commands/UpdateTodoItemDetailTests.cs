@@ -22,12 +22,12 @@ public class UpdateTodoItemDetailTests : TestBase
     {
         var userId = await TestApp.RunAsDefaultUserAsync();
 
-        var listId = await TestApp.SendAsync(new CreateTodoListCommand
+        var listId = await TestApp.SendAsync<int>(new CreateTodoListCommand
         {
             Title = "New List"
         });
 
-        var itemId = await TestApp.SendAsync(new CreateTodoItemCommand
+        var itemId = await TestApp.SendAsync<int>(new CreateTodoItemCommand
         {
             ListId = listId,
             Title = "New Item"

@@ -6,8 +6,7 @@ namespace CleanArchietureNoFrontEnd.Web.Infrastructure;
 
 /// <summary>
 /// Adds standard error responses to every OpenAPI operation. A 400 Bad Request is added to all
-/// operations because every request passes through <c>ValidationBehaviour</c> in the MediatR
-/// pipeline. 401 Unauthorized and 403 Forbidden are added only to operations that carry
+/// operations because every request passes through <c>ValidationBehaviour</c> in the Wolverine pipeline. 401 Unauthorized and 403 Forbidden are added only to operations that carry
 /// <see cref="IAuthorizeData"/> metadata.
 /// </summary>
 internal sealed class ApiExceptionOperationTransformer : IOpenApiOperationTransformer

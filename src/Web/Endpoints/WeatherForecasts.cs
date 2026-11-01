@@ -14,9 +14,9 @@ public class WeatherForecasts : IEndpointGroup
 
     [EndpointSummary("Get Weather Forecasts")]
     [EndpointDescription("Retrieves a list of weather forecasts for the next few days.")]
-    public static async Task<Ok<IEnumerable<WeatherForecast>>> GetWeatherForecasts(ISender sender)
+    public static async Task<Ok<IEnumerable<WeatherForecast>>> GetWeatherForecasts(IMessageBus bus)
     {
-        var forecasts = await sender.Send(new GetWeatherForecastsQuery());
+        var forecasts = await bus.InvokeAsync<IEnumerable<WeatherForecast>>(new GetWeatherForecastsQuery());
 
         return TypedResults.Ok(forecasts);
     }

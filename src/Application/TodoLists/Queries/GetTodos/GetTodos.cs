@@ -7,9 +7,9 @@ using CleanArchietureNoFrontEnd.Domain.ValueObjects;
 namespace CleanArchietureNoFrontEnd.Application.TodoLists.Queries.GetTodos;
 
 [Authorize]
-public record GetTodosQuery : IRequest<TodosVm>;
+public record GetTodosQuery;
 
-public class GetTodosQueryHandler : IRequestHandler<GetTodosQuery, TodosVm>
+public class GetTodosQueryHandler
 {
     private readonly IApplicationDbContext _context;
 

@@ -4,14 +4,14 @@ using CleanArchietureNoFrontEnd.Domain.ValueObjects;
 
 namespace CleanArchietureNoFrontEnd.Application.TodoLists.Commands.CreateTodoList;
 
-public record CreateTodoListCommand : IRequest<int>
+public record CreateTodoListCommand
 {
     public string? Title { get; init; }
 
     public string? Colour { get; init; }
 }
 
-public class CreateTodoListCommandHandler : IRequestHandler<CreateTodoListCommand, int>
+public class CreateTodoListCommandHandler
 {
     private readonly IApplicationDbContext _context;
 

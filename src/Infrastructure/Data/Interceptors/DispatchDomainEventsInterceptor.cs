@@ -1,17 +1,17 @@
 ﻿using CleanArchietureNoFrontEnd.Domain.Common;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using Wolverine;
 
 namespace CleanArchietureNoFrontEnd.Infrastructure.Data.Interceptors;
 
 public class DispatchDomainEventsInterceptor : SaveChangesInterceptor
 {
-    private readonly IMediator _mediator;
+    private readonly IMessageBus _messageBus;
 
-    public DispatchDomainEventsInterceptor(IMediator mediator)
+    public DispatchDomainEventsInterceptor(IMessageBus messageBus)
     {
-        _mediator = mediator;
+        _messageBus = messageBus;
     }
 
     public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)
@@ -45,6 +45,6 @@ public class DispatchDomainEventsInterceptor : SaveChangesInterceptor
         entities.ToList().ForEach(e => e.ClearDomainEvents());
 
         foreach (var domainEvent in domainEvents)
-            await _mediator.Publish(domainEvent);
+            await _messageBus.InvokeAsync(domainEvent);
     }
 }

@@ -20,7 +20,7 @@ public class CreateTodoItemTests : TestBase
     {
         var userId = await TestApp.RunAsDefaultUserAsync();
 
-        var listId = await TestApp.SendAsync(new CreateTodoListCommand
+        var listId = await TestApp.SendAsync<int>(new CreateTodoListCommand
         {
             Title = "New List"
         });
@@ -31,7 +31,7 @@ public class CreateTodoItemTests : TestBase
             Title = "Tasks"
         };
 
-        var itemId = await TestApp.SendAsync(command);
+        var itemId = await TestApp.SendAsync<int>(command);
 
         var item = await TestApp.FindAsync<TodoItem>(itemId);
 
