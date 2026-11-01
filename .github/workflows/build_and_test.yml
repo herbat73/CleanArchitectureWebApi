@@ -1,0 +1,46 @@
+name: .NET Build and Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main      
+ 
+env:
+  DOTNET_VERSION: "10.x"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore
+        run: dotnet restore CleanArchietureNoFrontEnd.slnx
+
+      - name: Build
+        run: dotnet build CleanArchietureNoFrontEnd.slnx --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test CleanArchietureNoFrontEnd.slnx --configuration Release --no-restore --no-build --logger trx --logger GitHubActions --results-directory ./test-results/ -p:CI=true
+
+      - name: .NET Test Results
+        uses: dorny/test-reporter@v2
+        continue-on-error: true
+        if: success() || failure()
+        with:
+          name: .NET Test Results
+          path: 'test-results/*.trx'
+          reporter: dotnet-trx
+
+      - name: Publish
+        run: dotnet publish CleanArchietureNoFrontEnd.slnx --configuration Release --no-restore --no-build

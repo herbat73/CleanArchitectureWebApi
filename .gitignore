@@ -490,3 +490,7 @@ $RECYCLE.BIN/
 *.db
 *.db-shm
 *.db-wal
+
+# idea code
+.idea/
+/.idea/.idea.CleanArchitecture/.idea
