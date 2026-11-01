@@ -1,6 +1,13 @@
 ﻿# Clean Architecture WenApi No FrontEnd
 
 Clean Architecture starter for .NET 10
+It is simplified and modified version based on concept taken from [Clean.Architecture.Solution.Template](https://github.com/jasontaylordev/CleanArchitecture) 
+
+Differences:
+- No MediatR (WolverineFx used)
+- Mo AutoMapper (refactored code)
+- No Aspire stack
+- Fixes & refactoring
 
 ## What's included in the template?
 
@@ -25,6 +32,10 @@ Clean Architecture starter for .NET 10
     - Domain testing (`Domain.UnitTests`)
 
 ## Getting started
+
+## Run docker and create container for local development with Postgres 
+
+Run `docker-compose up -d` to pull and start postgress db
 
 ## Build
 
