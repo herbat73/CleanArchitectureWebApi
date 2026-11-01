@@ -1,6 +1,30 @@
-﻿# CleanArchietureNoFrontEnd
+﻿# CleanArchieture WenApi No FrontEnd
 
-The project was generated using the [Clean.Architecture.Solution.Template](https://github.com/jasontaylordev/CleanArchitecture) version 10.8.0.
+Clean Architecture starter for .NET 10
+
+## What's included in the template?
+
+- **Shared** project with common Domain-Driven Design abstractions.
+- **Domain** layer with sample entities and domain events.
+- **Application** layer with abstractions for:
+    - CQRS (lightweight, WolverineFx command/query handlers)
+    - Example use cases (Todos,WeatherForecasts and Users)
+    - Cross-cutting concerns (logging, validation) implemented as decorators
+- **Infrastructure** layer with:
+    - JWT authentication with **refresh tokens** (with token rotation)
+    - Permission-based authorization
+    - EF Core + PostgreSQL
+- **Web.Api** layer with:
+    - Minimal API endpoints
+    - **OpenTelemetry** tracing and metrics (ASP.NET Core, HTTP, Npgsql, runtime)
+    - Global exception handling and `ProblemDetails`
+    - Scalar API reference (OpenAPI) with JWT support
+- **Testing** projects
+    - Functional testing (`Application.FunctionalTests`)
+    - Unit testing (`Application.UnitTests`)
+    - Domain testing (`Domain.UnitTests`)
+
+## Getting started
 
 ## Build
 
@@ -16,34 +40,6 @@ dotnet run --project .\src\Web
 
 The application expects PostgreSQL on `127.0.0.1:5432`, configured in `src\Web\appsettings.json`. The API reference is served at `/scalar`.
 
-## Code Styles & Formatting
-
-The template includes [EditorConfig](https://editorconfig.org/) support to help maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. The **.editorconfig** file defines the coding styles applicable to this solution.
-
-## Code Scaffolding
-
-The template includes support to scaffold new commands and queries.
-
-Start in the `.\src\Application\` folder.
-
-Create a new command:
-
-```
-dotnet new ca-usecase --name CreateTodoList --feature-name TodoLists --usecase-type command --return-type int
-```
-
-Create a new query:
-
-```
-dotnet new ca-usecase -n GetTodos -fn TodoLists -ut query -rt TodosVm
-```
-
-If you encounter the error *"No templates or subcommands found matching: 'ca-usecase'."*, install the template and try again:
-
-```bash
-dotnet new install Clean.Architecture.Solution.Template::10.8.0
-```
-
 ## Test
 
 The solution contains unit, integration, and functional tests.
@@ -54,6 +50,3 @@ dotnet test
 ```
 
 The functional tests need a running PostgreSQL server. They use the `CleanArchietureNoFrontEndDb_FunctionalTests` database on `127.0.0.1:5432` by default, and reset its tables between tests. To use a different server, set the `FUNCTIONAL_TESTS_CONNECTION_STRING` environment variable.
-
-## Help
-To learn more about the template go to the [project website](https://cleanarchitecture.jasontaylor.dev). Here you can find additional guidance, request new features, report a bug, and discuss the template with other users.
