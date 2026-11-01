@@ -12,7 +12,7 @@ public class WebApiFactory(string connectionString) : WebApplicationFactory<Prog
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder
-            .UseSetting("ConnectionStrings:CleanArchietureNoFrontEndDb", connectionString);
+            .UseSetting("ConnectionStrings:CleanArchitectureWebApiDb", connectionString);
 
         builder.ConfigureTestServices(services =>
         {

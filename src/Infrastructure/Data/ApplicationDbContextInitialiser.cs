@@ -4,8 +4,10 @@ using CleanArchietureNoFrontEnd.Domain.ValueObjects;
 using CleanArchietureNoFrontEnd.Infrastructure.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Npgsql;
 
 namespace CleanArchietureNoFrontEnd.Infrastructure.Data;
 
@@ -41,6 +43,8 @@ public class ApplicationDbContextInitialiser
     {
         try
         {
+            await CreateDatabaseIfNotExistsAsync();
+
             // See https://jasontaylor.dev/ef-core-database-initialisation-strategies
             await _context.Database.EnsureDeletedAsync();
             await _context.Database.EnsureCreatedAsync();
@@ -50,6 +54,46 @@ public class ApplicationDbContextInitialiser
             _logger.LogError(ex, "An error occurred while initialising the database.");
             throw;
         }
+    }
+
+    private async Task CreateDatabaseIfNotExistsAsync()
+    {
+        var connectionString = _context.Database.GetConnectionString();
+        if (string.IsNullOrWhiteSpace(connectionString))
+        {
+            return;
+        }
+
+        // The target database cannot be opened while it does not exist,
+        // so connect to the 'postgres' maintenance database to create it.
+        var targetBuilder = new NpgsqlConnectionStringBuilder(connectionString);
+        var databaseName = targetBuilder.Database;
+
+        if (string.IsNullOrWhiteSpace(databaseName))
+        {
+            return;
+        }
+
+        var maintenanceBuilder = new NpgsqlConnectionStringBuilder(connectionString) { Database = "postgres" };
+
+        await using var connection = new NpgsqlConnection(maintenanceBuilder.ConnectionString);
+        await connection.OpenAsync();
+
+        await using (var existsCommand = new NpgsqlCommand("SELECT 1 FROM pg_database WHERE datname = @name", connection))
+        {
+            existsCommand.Parameters.AddWithValue("name", databaseName);
+
+            if (await existsCommand.ExecuteScalarAsync() is not null)
+            {
+                return;
+            }
+        }
+
+        _logger.LogInformation("Database {DatabaseName} does not exist. Creating it.", databaseName);
+
+        var quotedName = "\"" + databaseName.Replace("\"", "\"\"") + "\"";
+        await using var createCommand = new NpgsqlCommand($"CREATE DATABASE {quotedName}", connection);
+        await createCommand.ExecuteNonQueryAsync();
     }
 
     public async Task SeedAsync()
