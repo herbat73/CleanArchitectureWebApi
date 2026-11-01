@@ -31,10 +31,18 @@ Differences:
     - **OpenTelemetry** tracing and metrics (ASP.NET Core, HTTP, Npgsql, runtime)
     - Global exception handling and `ProblemDetails`
     - Scalar API reference (OpenAPI) with JWT support
+- **ClientApp** (Angular, `src/ClientApp`) with:
+    - Login page and route guard for the protected pages
+    - To-dos page: add and delete lists (with a colour), add, complete and delete items, and set item priority
+    - HTTP interceptor that attaches the bearer token and refreshes it once on a 401
+    - Token storage in `localStorage`
+    - Dev server proxy for `/api` (`proxy.conf.json`), so no CORS setup is needed
+    - Unit tests with Vitest (`ng test`)
 - **Testing** projects
     - Functional testing (`Application.FunctionalTests`)
     - Unit testing (`Application.UnitTests`)
     - Domain testing (`Domain.UnitTests`)
+- **CI** (GitHub Actions, `.github/workflows/build_and_test.yml`) with a .NET build/test job and a separate ClientApp test job
 
 ## Getting started
 
