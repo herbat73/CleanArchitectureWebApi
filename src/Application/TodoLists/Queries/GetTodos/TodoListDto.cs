@@ -1,6 +1,4 @@
-﻿using CleanArchietureNoFrontEnd.Domain.Entities;
-
-namespace CleanArchietureNoFrontEnd.Application.TodoLists.Queries.GetTodos;
+﻿namespace CleanArchietureNoFrontEnd.Application.TodoLists.Queries.GetTodos;
 
 public class TodoListDto
 {
@@ -16,12 +14,4 @@ public class TodoListDto
     public string? Colour { get; init; }
 
     public IReadOnlyCollection<TodoItemDto> Items { get; init; }
-
-    private class Mapping : Profile
-    {
-        public Mapping()
-        {
-            CreateMap<TodoList, TodoListDto>();
-        }
-    }
 }

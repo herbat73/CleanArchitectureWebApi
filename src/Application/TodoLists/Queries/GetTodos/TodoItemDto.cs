@@ -1,6 +1,4 @@
-﻿using CleanArchietureNoFrontEnd.Domain.Entities;
-
-namespace CleanArchietureNoFrontEnd.Application.TodoLists.Queries.GetTodos;
+﻿namespace CleanArchietureNoFrontEnd.Application.TodoLists.Queries.GetTodos;
 
 public class TodoItemDto
 {
@@ -15,13 +13,4 @@ public class TodoItemDto
     public int Priority { get; init; }
 
     public string? Note { get; init; }
-
-    private class Mapping : Profile
-    {
-        public Mapping()
-        {
-            CreateMap<TodoItem, TodoItemDto>().ForMember(d => d.Priority, 
-                opt => opt.MapFrom(s => (int)s.Priority));
-        }
-    }
 }

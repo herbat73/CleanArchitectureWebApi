@@ -12,12 +12,10 @@ public record GetTodosQuery : IRequest<TodosVm>;
 public class GetTodosQueryHandler : IRequestHandler<GetTodosQuery, TodosVm>
 {
     private readonly IApplicationDbContext _context;
-    private readonly IMapper _mapper;
 
-    public GetTodosQueryHandler(IApplicationDbContext context, IMapper mapper)
+    public GetTodosQueryHandler(IApplicationDbContext context)
     {
         _context = context;
-        _mapper = mapper;
     }
 
     public async Task<TodosVm> Handle(GetTodosQuery request, CancellationToken cancellationToken)
@@ -42,7 +40,23 @@ public class GetTodosQueryHandler : IRequestHandler<GetTodosQuery, TodosVm>
 
             Lists = await _context.TodoLists
                 .AsNoTracking()
-                .ProjectTo<TodoListDto>(_mapper.ConfigurationProvider)
+                .Select(t => new TodoListDto
+                {
+                    Id = t.Id,
+                    Title = t.Title,
+                    Colour = t.Colour.Code,
+                    Items = t.Items
+                        .Select(i => new TodoItemDto
+                        {
+                            Id = i.Id,
+                            ListId = i.ListId,
+                            Title = i.Title,
+                            Done = i.Done,
+                            Priority = (int)i.Priority,
+                            Note = i.Note
+                        })
+                        .ToList()
+                })
                 .OrderBy(t => t.Title)
                 .ToListAsync(cancellationToken)
         };
