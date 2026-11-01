@@ -5,8 +5,9 @@ It is simplified and modified version based on concept taken from [Clean.Archite
 
 Differences:
 - No MediatR (WolverineFx used)
-- Mo AutoMapper (refactored code)
+- No AutoMapper (refactored code)
 - No Aspire stack
+- No NUnit (XUnit used)
 - Fixes & refactoring
 
 ## What's included in the template?
@@ -60,4 +61,4 @@ To run the tests:
 dotnet test
 ```
 
-The functional tests need a running PostgreSQL server. They use the `CleanArchietureNoFrontEndDb_FunctionalTests` database on `127.0.0.1:5432` by default, and reset its tables between tests. To use a different server, set the `FUNCTIONAL_TESTS_CONNECTION_STRING` environment variable.
+The functional tests start their own PostgreSQL container with [Testcontainers](https://testcontainers.com/), so Docker must be running. The container is created once per test run, and tables are reset between tests. No local PostgreSQL server is needed.
