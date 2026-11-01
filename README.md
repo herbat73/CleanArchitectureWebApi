@@ -1,11 +1,12 @@
 ﻿[![Build](https://github.com/herbat73/CleanArchitectureWebApi/actions/workflows/build_and_test.yml/badge.svg)](https://github.com/herbat73/CleanArchitectureWebApi/actions/workflows/build_and_test.yml)
 
-# Clean Architecture WebApi, No FrontEnd
+# Clean Architecture WebApi, Angular front end
 
 Clean Architecture starter for .NET 10
 It is simplified and modified version based on concept taken from [Clean.Architecture.Solution.Template](https://github.com/jasontaylordev/CleanArchitecture) 
 
 Differences:
+- Added Angular front end with user login and to-dos interfaces (WebApi and frontEnd works on different ports)
 - No MediatR (WolverineFx used)
 - No AutoMapper (refactored code)
 - No Aspire stack
