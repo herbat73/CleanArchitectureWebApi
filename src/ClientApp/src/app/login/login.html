@@ -1,0 +1,24 @@
+<section class="card">
+  <h1>Sign in</h1>
+  <p class="muted">Sign in with an account registered in the WebApi.</p>
+
+  <form (ngSubmit)="submit()" #form="ngForm">
+    <label>
+      Email
+      <input name="email" type="email" required autocomplete="username" [(ngModel)]="email" />
+    </label>
+
+    <label>
+      Password
+      <input name="password" type="password" required autocomplete="current-password" [(ngModel)]="password" />
+    </label>
+
+    @if (error(); as message) {
+      <p class="error" role="alert">{{ message }}</p>
+    }
+
+    <button type="submit" [disabled]="form.invalid || busy()">
+      {{ busy() ? 'Signing in…' : 'Sign in' }}
+    </button>
+  </form>
+</section>
