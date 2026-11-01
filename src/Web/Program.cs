@@ -4,8 +4,6 @@ using Scalar.AspNetCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.AddServiceDefaults();
-
 builder.AddKeyVaultIfConfigured();
 builder.AddApplicationServices();
 builder.AddInfrastructureServices();
@@ -39,7 +37,6 @@ app.UseExceptionHandler(options => { });
 
 app.Map("/", () => Results.Redirect("/scalar"));
 
-app.MapDefaultEndpoints();
 app.MapEndpoints(typeof(Program).Assembly);
 
 

@@ -6,9 +6,6 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:14793/?password=sjv8v*6DCa%2ByXCa5f6Y1Kv&amp;user=XPgjGexWUH</jdbc-url>
-      <jdbc-additional-properties>
-        <property name="aspireResourceId" value="dbserver-eecd24f2" />
-      </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

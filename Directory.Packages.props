@@ -32,19 +32,6 @@
     <PackageVersion Include="Scalar.AspNetCore" Version="2.18.7" />
     <PackageVersion Include="Shouldly" Version="4.3.0" />
     <PackageVersion Include="System.IdentityModel.Tokens.Jwt" Version="8.23.0" />
-    <PackageVersion Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="13.6.4" />
-    <PackageVersion Include="Aspire.Hosting.Azure.PostgreSQL" Version="13.6.4" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
-    <PackageVersion Include="Aspire.Hosting.AppHost" Version="13.6.4" />
-    <PackageVersion Include="Aspire.Hosting.Azure.AppContainers" Version="13.6.4" />
-    <PackageVersion Include="Aspire.Hosting.Testing" Version="13.6.4" />
-    <PackageVersion Include="Aspire.Hosting.JavaScript" Version="13.6.4" />
-    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.11.0" />
-    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.11.0" />
-    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.20.1" />
-    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.20.1" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.20.1" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.20.1" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.20.1" />
   </ItemGroup>
 </Project>

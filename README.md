@@ -11,10 +11,10 @@ Run `dotnet build` to build the solution.
 To run the application:
 
 ```bash
-dotnet run --project .\src\AppHost
+dotnet run --project .\src\Web
 ```
 
-The Aspire dashboard will open automatically, showing the application URLs and logs.
+The application expects PostgreSQL on `127.0.0.1:5432`, configured in `src\Web\appsettings.json`. The API reference is served at `/scalar`.
 
 ## Code Styles & Formatting
 
@@ -52,6 +52,8 @@ To run the tests:
 ```bash
 dotnet test
 ```
+
+The functional tests need a running PostgreSQL server. They use the `CleanArchietureNoFrontEndDb_FunctionalTests` database on `127.0.0.1:5432` by default, and reset its tables between tests. To use a different server, set the `FUNCTIONAL_TESTS_CONNECTION_STRING` environment variable.
 
 ## Help
 To learn more about the template go to the [project website](https://cleanarchitecture.jasontaylor.dev). Here you can find additional guidance, request new features, report a bug, and discuss the template with other users.

@@ -27,8 +27,6 @@ public static class DependencyInjection
             options.ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
         });
 
-        builder.EnrichNpgsqlDbContext<ApplicationDbContext>();
-
         builder.Services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
 
         builder.Services.AddScoped<ApplicationDbContextInitialiser>();
