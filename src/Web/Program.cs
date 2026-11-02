@@ -28,6 +28,8 @@ app.UseCors(static builder =>
         .AllowAnyHeader()
         .AllowAnyOrigin());
 
+app.UseRateLimiter();
+
 app.UseFileServer();
 
 app.MapOpenApi();
