@@ -1,6 +1,7 @@
 using Azure.Identity;
 using CleanArchitectureWebApi.Application.Common.Interfaces;
 using CleanArchitectureWebApi.Infrastructure.Data;
+using CleanArchitectureWebApi.Web.Infrastructure;
 using CleanArchitectureWebApi.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,6 +34,8 @@ public static class DependencyInjection
         });
 
         builder.Services.AddCors();
+
+        builder.Services.AddApiRateLimiting(builder.Configuration);
     }
 
     public static void AddKeyVaultIfConfigured(this IHostApplicationBuilder builder)

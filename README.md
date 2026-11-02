@@ -13,6 +13,7 @@ Differences:
 - No NUnit (XUnit used)
 - Functional tests are using TestContainers in order to run on GitHub test actions
 - Fixes & refactoring
+- Api rate limiter added
 
 ## What's included in the template?
 
@@ -31,6 +32,7 @@ Differences:
     - **OpenTelemetry** tracing and metrics (ASP.NET Core, HTTP, Npgsql, runtime)
     - Global exception handling and `ProblemDetails`
     - Scalar API reference (OpenAPI) with JWT support
+    - Rate limiter
 - **ClientApp** (Angular, `src/ClientApp`) with:
     - Login page and route guard for the protected pages
     - To-dos page: add and delete lists (with a colour), add, complete and delete items, and set item priority
