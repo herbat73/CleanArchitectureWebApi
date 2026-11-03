@@ -1,4 +1,5 @@
-﻿using CleanArchitectureWebApi.Application.TodoLists.Queries.GetTodos;
+﻿using CleanArchitectureWebApi.Application.TodoLists.Commands.CreateTodoList;
+using CleanArchitectureWebApi.Application.TodoLists.Queries.GetTodos;
 using CleanArchitectureWebApi.Domain.Entities;
 using CleanArchitectureWebApi.Domain.ValueObjects;
 
@@ -46,6 +47,26 @@ public class GetTodosTests : TestBase
 
         result.Lists.Count.ShouldBe(1);
         result.Lists.First().Items.Count.ShouldBe(7);
+    }
+
+    [Fact]
+    public async Task ShouldServeCachedResultUntilACommandInvalidatesIt()
+    {
+        await TestApp.RunAsDefaultUserAsync();
+
+        await TestApp.AddAsync(new TodoList { Title = "Shopping", Colour = Colour.Blue });
+
+        (await TestApp.SendAsync<TodosVm>(new GetTodosQuery())).Lists.Count.ShouldBe(1);
+
+        // Written straight to the database, bypassing the commands, so the cached result is still served.
+        await TestApp.AddAsync(new TodoList { Title = "Chores", Colour = Colour.Red });
+
+        (await TestApp.SendAsync<TodosVm>(new GetTodosQuery())).Lists.Count.ShouldBe(1);
+
+        // Any successful todo command evicts the cache.
+        await TestApp.SendAsync<int>(new CreateTodoListCommand { Title = "Work" });
+
+        (await TestApp.SendAsync<TodosVm>(new GetTodosQuery())).Lists.Count.ShouldBe(3);
     }
 
     [Fact]
