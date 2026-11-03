@@ -1,8 +1,10 @@
-﻿using CleanArchitectureWebApi.Application.Common.Interfaces;
+﻿using CleanArchitectureWebApi.Application.Common.Caching;
+using CleanArchitectureWebApi.Application.Common.Interfaces;
 using CleanArchitectureWebApi.Application.Common.Models;
 using CleanArchitectureWebApi.Application.Common.Security;
 using CleanArchitectureWebApi.Domain.Enums;
 using CleanArchitectureWebApi.Domain.ValueObjects;
+using Microsoft.Extensions.Caching.Hybrid;
 
 namespace CleanArchitectureWebApi.Application.TodoLists.Queries.GetTodos;
 
@@ -11,14 +13,29 @@ public record GetTodosQuery;
 
 public class GetTodosQueryHandler
 {
-    private readonly IApplicationDbContext _context;
+    private const string CacheKey = "todos:all";
 
-    public GetTodosQueryHandler(IApplicationDbContext context)
+    private readonly IApplicationDbContext _context;
+    private readonly HybridCache _cache;
+
+    public GetTodosQueryHandler(IApplicationDbContext context, HybridCache cache)
     {
         _context = context;
+        _cache = cache;
     }
 
+    // The result is not user-specific, so a single shared entry is used. It is evicted by CacheInvalidationMiddleware
+    // whenever a todo command succeeds.
     public async Task<TodosVm> Handle(GetTodosQuery request, CancellationToken cancellationToken)
+    {
+        return await _cache.GetOrCreateAsync(
+            CacheKey,
+            async ct => await LoadAsync(ct),
+            tags: [CacheTags.Todos],
+            cancellationToken: cancellationToken);
+    }
+
+    private async Task<TodosVm> LoadAsync(CancellationToken cancellationToken)
     {
         return new TodosVm
         {

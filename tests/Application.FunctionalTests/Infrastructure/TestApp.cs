@@ -1,8 +1,10 @@
+using CleanArchitectureWebApi.Application.Common.Caching;
 using CleanArchitectureWebApi.Domain.Constants;
 using CleanArchitectureWebApi.Infrastructure.Data;
 using CleanArchitectureWebApi.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Hybrid;
 using Microsoft.Extensions.DependencyInjection;
 using Wolverine;
 
@@ -85,6 +87,10 @@ public static class TestApp
         {
             await FunctionalTestSetup.DbResetter.ResetAsync();
         }
+
+        // Respawn wipes the tables behind the application's back, so cached query results must be dropped too.
+        using var scope = FunctionalTestSetup.ScopeFactory.CreateScope();
+        await scope.ServiceProvider.GetRequiredService<HybridCache>().RemoveByTagAsync(CacheTags.Todos);
 
         _userId = null;
         _roles = null;
