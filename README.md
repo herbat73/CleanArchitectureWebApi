@@ -14,6 +14,7 @@ Differences:
 - Functional tests are using TestContainers in order to run on GitHub test actions
 - Fixes & refactoring
 - Api rate limiter added
+- HybridCache added
 
 ## What's included in the template?
 
@@ -22,7 +23,8 @@ Differences:
 - **Application** layer with abstractions for:
     - CQRS (lightweight, WolverineFx command/query handlers)
     - Example use cases (Todos,WeatherForecasts and Users)
-    - Cross-cutting concerns (logging, validation) implemented as decorators
+    - Cross-cutting concerns (logging, validation) implemented as decorators 
+    - Commands change data that cached queries are built from, so drop the cache once they succeed.
 - **Infrastructure** layer with:
     - JWT authentication with **refresh tokens** (with token rotation)
     - Permission-based authorization
